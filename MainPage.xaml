@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Pomodoro"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Pomodoro.MainPage"
+	BackgroundColor="{AppThemeBinding Dark=#112B47, Light=#FAFAFA}"
+	Padding="10">
+    <StackLayout x:Name="MainLayout"
+                 Orientation="Vertical"
+    	         BackgroundColor="Transparent">
+    	<StackLayout x:Name="PomodoroLayout"
+    	             Orientation="Vertical"
+    	             BackgroundColor="Transparent"
+    	             Spacing="300"
+    	             VerticalOptions="CenterAndExpand">
+        	<Frame x:Name="SaatFrame"
+        	       BackgroundColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+        	       HasShadow= "false"
+        	       CornerRadius="300">
+        	    <StackLayout x:Name="SaatLayout"
+        	                 Orientation="Horizontal"
+        	                 BackgroundColor="Transparent"
+        	                 VerticalOptions="Center"
+        	                 HorizontalOptions="Center">
+                    <Label  x:Name="Dakika" 
+                		    Text="00"
+                		    FontSize="100"
+                		    TextColor="{AppThemeBinding Dark=#112B47, Light=#FAFAFA}"/>
+                	<Label  x:Name="Nokta"
+                		    Text=":"
+                		    FontSize="50"
+                		    TextColor="{AppThemeBinding Dark=#112B47, Light=#FAFAFA}"
+                		    VerticalOptions="Center"/>
+                	<Label  x:Name="Saniye"
+                		    Text="00"
+                		    FontSize="100"
+                		    TextColor="{AppThemeBinding Dark=#112B47, Light=#FAFAFA}"/>
+            	</StackLayout>
+        	</Frame>
+        	<Frame x:Name="ButtonFrame"
+        	       BackgroundColor="Transparent"
+        	       HasShadow= "false"
+        	       CornerRadius="300">
+        	    <StackLayout x:Name="ButtonLayout"
+        	                 Orientation="Horizontal"
+        	                 BackgroundColor="Transparent"
+        	                 VerticalOptions="Center"
+        	                 HorizontalOptions="Center">
+                    <Button x:Name="Baslat"
+                            Text="Odaklan"
+                            BackgroundColor="Transparent"
+                            CornerRadius="70"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            BorderWidth="1"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            FontSize="30"
+                            Clicked="BaslatClick"
+                            WidthRequest="150"/>
+                    <Button x:Name="Durdur"
+                            Text="Durdur"
+                            BackgroundColor="Transparent"
+                            CornerRadius="70"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            BorderWidth="1"
+                            IsVisible="false"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            FontSize="30"
+                            Clicked="DurdurClick"
+                            WidthRequest="150"/>
+                    <Button x:Name="Ara"
+                            Text="Ara Ver"
+                            BackgroundColor="Transparent"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            CornerRadius="70"
+                            BorderWidth="1"
+                            IsVisible="false"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            FontSize="30"
+                            Clicked="AraVer"
+                            WidthRequest="150"/>
+                    <Button x:Name="Devam"
+                            Text="Devam Et"
+                            BackgroundColor="Transparent"
+                            CornerRadius="70"
+                            IsVisible="false"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            BorderWidth="1"
+                            FontSize="30"
+                            Clicked="DevamClick"
+                            WidthRequest="150"/>
+                    <Button x:Name="Bitir"
+                            Text="Bitir"
+                            BackgroundColor="Transparent"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            CornerRadius="70"
+                            IsVisible="false"
+                            BorderWidth="1"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            FontSize="30"
+                            Clicked="BitirClick"
+                            WidthRequest="150"/>
+                    <Button x:Name="AraBitir"
+                            Text="Bitir"
+                            BackgroundColor="Transparent"
+                            BorderColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            CornerRadius="70"
+                            IsVisible="false"
+                            BorderWidth="1"
+                            TextColor="{AppThemeBinding Dark=#FAFAFA, Light=#112B47}"
+                            FontSize="30"
+                            Clicked="AraBitirClick"
+                            WidthRequest="150"/>
+            	</StackLayout>
+        	</Frame>
+    	</StackLayout>
+    	<Button x:Name="ayarlarBtn"
+    	        Text="Ayarlar"
+    	        BackgroundColor="Orange"
+    	        CornerRadius="100"
+    	        Clicked = "PomodoroSettings"
+    	        VerticalOptions="End"
+    	        HorizontalOptions="End"
+    	        Margin="15"/>
+    </StackLayout>
+</ContentPage>
