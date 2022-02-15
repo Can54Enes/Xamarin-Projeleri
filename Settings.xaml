@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Pomodoro"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+	x:Class="Pomodoro.Settings"
+	BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#112B47}"
+	Padding="10">
+    <StackLayout Padding="10"
+                 Spacing="50">
+        <Frame BackgroundColor="Transparent">
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Pomodoro Ayarları"
+                       TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                       FontSize="25"/>
+            </StackLayout>
+        </Frame>
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Frame BackgroundColor="White"
+                       Padding="10">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Pomodoro Süresi"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="20">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PomodoroSureSec"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="PSureDk"
+                               Text="45 Dakika"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="15">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PomodoroSureSec" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       Padding="10">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Kısa Mola Süresi"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="20">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="KısaMolaSureSec" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="KısaMolaSureDk"
+                               Text="15 Dakika"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="15">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="KısaMolaSureSec" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       Padding="10">
+                    <StackLayout Orientation="Horizontal" 
+                                 Spacing="175">
+                        <Label Text="Uzun Mola Kapalı" 
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="20"/>
+                        <Switch x:Name="UzunMola"
+                                Toggled="UzunMolaAcKapa">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="On">
+                                            <VisualState.Setters>
+                                                <Setter Property="ThumbColor"
+                                                        Value="MediumSpringGreen" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Off">
+                                            <VisualState.Setters>
+                                                <Setter Property="ThumbColor"
+                                                        Value="Red" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                        </Switch>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       Padding="10">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Uzun Mola Süresi"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="20">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UzunMolaSureSec" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="UzunMolaSureDk"
+                               Text="20 Dakika"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="15">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UzunMolaSureSec" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       Padding="10">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Uzun Mola İçin Pomodoro Sayısı"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="20">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UMPomodoroSayisi" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label x:Name="UMPomodoro"
+                               Text="4 Pomodoro"
+                               TextColor="{AppThemeBinding Dark=White, Light=#112B47}"
+                               FontSize="15">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UMPomodoroSayisi" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Kaydet ve Çık" 
+                        Clicked="Kaydet"
+                        CornerRadius="100"
+                        WidthRequest="150"
+                        Margin="0,200,0,0"
+                        BackgroundColor="Green"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
